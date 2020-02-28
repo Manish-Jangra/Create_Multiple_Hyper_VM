@@ -1,0 +1,5 @@
+$Hostnames = Get-Content -Path "C:\Users\username\Documents\hostname.json"
+foreach ($Hostname in $Hostnames){
+    New-Item -Path "C:\Users\username\Documents\$Hostname.vbs" -ItemType File
+    Add-Content -Path "C:\Users\username\Documents\$Hostname.vbs" -Value (Get-Content -Path "C:\Users\username\Documents\sample.vbs")
+}
